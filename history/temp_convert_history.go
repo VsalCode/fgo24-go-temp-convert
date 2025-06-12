@@ -12,9 +12,9 @@ type DataConvert struct {
 }
 
 func HistoryTempConvert(data []DataConvert) {
-	fmt.Println("======== WELCOME ========")
+	fmt.Println("======== LIST HISTORY ========")
 	for x := range data {
-		fmt.Sprintf("%d. f: %d, k: %d, r: %d",x + 1 , data[x].Fahrenheit, data[x].Kelvin, data[x].Reamur)
+		fmt.Printf("%d. f: %d, k: %d, r: %d",x + 1 , data[x].Fahrenheit, data[x].Kelvin, data[x].Reamur)
 	}
 
 	fmt.Print("ketik 0 untuk konversi kembali")

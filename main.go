@@ -18,15 +18,18 @@ var DataConvertTemp []history.DataConvert
 
 func main() {
 
-	fmt.Print(mainPage)
-	var choice string
-	fmt.Scanln(&choice)
-	switch choice {
-	case "1":
-		convert.TempConvert(&DataConvertTemp)
-	case "2":
-		history.HistoryTempConvert(DataConvertTemp)
-	case "0":
-		os.Exit(0)
+	for {
+		fmt.Print(mainPage)
+		var choice string
+		fmt.Scanln(&choice)
+		switch choice {
+		case "1":
+			convert.TempConvert(&DataConvertTemp)
+		case "2":
+			history.HistoryTempConvert(DataConvertTemp)
+		case "0":
+			os.Exit(0)
+		}
 	}
+
 }
