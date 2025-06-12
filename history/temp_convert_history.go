@@ -6,6 +6,7 @@ import (
 )
 
 type DataConvert struct {
+	Base string
 	Fahrenheit int
 	Kelvin     int
 	Reamur     int
@@ -13,8 +14,9 @@ type DataConvert struct {
 
 func HistoryTempConvert(data []DataConvert) {
 	fmt.Println("======== LIST HISTORY ========")
-	for x := range data {
-		fmt.Printf("%d. f: %d, k: %d, r: %d",x + 1 , data[x].Fahrenheit, data[x].Kelvin, data[x].Reamur)
+	for x, item := range data {
+		fmt.Printf("%d. Base Celcius: %s",x + 1, item.Base)
+		fmt.Printf("f: %d°C, k: %d°C, r: %d°C\n", item.Fahrenheit, item.Kelvin, item.Reamur)
 	}
 
 	fmt.Print("ketik 0 untuk konversi kembali")

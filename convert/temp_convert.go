@@ -24,9 +24,10 @@ func TempConvert(data *[]history.DataConvert) {
 
 	f := (9/5)*c + 32
 	k := c + 273
-	r := (4 / 5) * c
+	r := c * 4 / 5
 
 	tempData = history.DataConvert{
+		Base: input,
 		Fahrenheit: f,
 		Kelvin:     k,
 		Reamur:     r,
@@ -34,11 +35,13 @@ func TempConvert(data *[]history.DataConvert) {
 
 	*data = append(*data, tempData)
 
+	fmt.Printf("Base Celcius: %s°C\n", input)
+	fmt.Printf("--------------------\n")
 	fmt.Printf("Fahrenheit: %d°C\n", f)
 	fmt.Printf("Kelvin: %d°C\n", k)
 	fmt.Printf("Reamur: %d°C\n", r)
 
-	fmt.Print("ketik 0 untuk konversi kembali")
+	fmt.Print("ketik 0 untuk kembali ke menu: ")
 	var choice string
 	fmt.Scanln(&choice)
 	switch choice {
